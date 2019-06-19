@@ -1,0 +1,44 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8060
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.133.129:8010/eureka/
+spring:
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  zipkin:
+    base-url: http://127.0.0.1:8201/ # 指定了 Zipkin 服务器的地址
+  rabbitmq:
+    host: 192.168.133.129
+    username: admin
+    password: admin
+    port: 5672
+#feign
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+#    熔断器
+  hystrix:
+    enabled: true
+###熔断监控
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
