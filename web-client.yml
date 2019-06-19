@@ -1,0 +1,35 @@
+spring:
+  rabbitmq:
+    host: 192.168.133.129
+    username: admin
+    password: admin
+    port: 5672
+  profiles:
+    include:
+      eureka,zipkin
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8065
+
+#feign
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+#    熔断器
+  hystrix:
+    enabled: true
+###熔断监控
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    health:
+#      show-details: ALWAYS

@@ -1,0 +1,20 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8201
+
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+spring:
+  main:
+    allow-bean-definition-overriding: true #zipkin有重名的包 覆盖下
+  profiles:
+    include:
+      eureka
