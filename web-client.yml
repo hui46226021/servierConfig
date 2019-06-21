@@ -6,7 +6,7 @@ spring:
     port: 5672
   profiles:
     include:
-      eureka,zipkin
+      eureka,zipkin,bootadmin
 # Tomcat
 server:
   tomcat:
