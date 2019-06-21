@@ -1,0 +1,28 @@
+server:
+  port: 8050
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        # This route rule used to forward request to activity server
+        - id: web
+          uri: lb://web-client
+          predicates:
+            - Path=/web/**
+          filters:
+            - StripPrefix=1
+        - id: baidu
+          uri: www.baidu.com
+          predicates:
+            - Path=/baidu/**
+          filters:
+            - StripPrefix=1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.133.129:8010/eureka/
+
+
