@@ -17,4 +17,4 @@ spring:
     allow-bean-definition-overriding: true #zipkin有重名的包 覆盖下
   profiles:
     include:
-      eureka
+      eureka,bootadmin
