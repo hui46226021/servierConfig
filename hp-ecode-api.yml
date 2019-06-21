@@ -30,7 +30,7 @@ spring:
         min-idle: 5       # 连接池中的最小空闲连接
   profiles:
     include:
-      eureka,zipkin
+      eureka,zipkin,bootadmin
 
 zhush:
   redis:
