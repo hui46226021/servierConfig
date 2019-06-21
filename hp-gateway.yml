@@ -15,7 +15,7 @@ spring:
           filters:
             - StripPrefix=1
         - id: baidu
-          uri: www.baidu.com
+          uri: http://www.baidu.com
           predicates:
             - Path=/baidu/**
           filters:
